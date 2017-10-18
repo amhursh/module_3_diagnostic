@@ -2,7 +2,10 @@ class SearchController < ApplicationController
 
   def index
     zip = params[:q]
-    @stations_by_zip = NrelService.get_stations(zip)
+    station_search = NrelService.get_stations(zip)
+    @stations_by_zip = station_search.map do |station|
+      Station.new(station)
+    end
   end
 
 end
