@@ -13,8 +13,8 @@ class NrelService
     #   req.params['api_key'] = ENV["api_key"]
     #   req.params['location'] = zip
     # end
-    response = conn.get("nearest.json?api_key=#{ENV['api_key']}&location=#{zip}")
-    search_results = JSON.parse(response.body, symbolize_names: true)[:fuel_stations]
+    response = conn.get("nearest.json?api_key=#{ENV['api_key']}&location=#{zip}&fuel_type=ELEC,LPG")
+    search_results = JSON.parse(response.body, symbolize_names: true)[:fuel_stations][0..9]
   end
 
   def self.get_stations(zip)

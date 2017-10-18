@@ -21,7 +21,7 @@ class Station
   end
 
   def address
-    address + " " + city + " " + state + " " + zip
+    street + " " + city + " " + state + " " + zip
   end
 
 end
