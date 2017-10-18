@@ -1,0 +1,17 @@
+<div>
+	<h1>10 closest stations within 6 miles</h1>
+</div>
+
+<div>
+	<ul>
+	<% @stations_by_zip.each do |station| %>
+		<li class="station">
+			<h3 class="station_name"></h3>
+			<h5 class="station_address"></h5>
+			<h5 class="station_fuel_types"></h5>
+			<h5 class="station_distance"></h5>
+			<h5 class="station_access_times"></h5>
+		</li>
+	<% end %>
+	</ul>
+</div>
